@@ -1,0 +1,55 @@
+#leavealone
+modLoader="javafml" #mandatory
+
+#leavealone
+loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+
+#github issue tracker URL
+issueTrackerURL="http://www.google.com/" #optional
+
+#leavealone
+[[mods]] #mandatory
+
+modId="theboundary" #mandatory
+
+version="0.0.1" #mandatory
+
+displayName="The Boundary" #mandatory
+
+# probably unused right now
+updateJSONURL="http://www.google.com/" #optional
+
+# curseforge url
+displayURL="http://www.google.com/" #optional
+
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="" #optional
+
+credits="beefseal made this, thanks to TurtyWurty for his excellent tutorial series" #optional
+
+authors="beefseal" #optional
+
+description='''
+What holds the universe in? The Boundary does. A dimension mod for Skyblock style progressive challenges.
+'''
+
+# leave this alone
+[[dependencies.theboundary]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[31,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+    
+# leave this alone
+[[dependencies.theboundary]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
