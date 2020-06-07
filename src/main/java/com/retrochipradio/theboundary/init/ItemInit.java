@@ -5,23 +5,15 @@ import com.retrochipradio.theboundary.TheBoundary.BoundaryItemGroup;
 
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = TheBoundary.MOD_ID, bus = Bus.MOD)
-@ObjectHolder(TheBoundary.MOD_ID)
-public class ItemInit 
-{	
-	public static final Item boundaryrod_item = null;
-	public static final Item special_item = null;
+public class ItemInit {
 	
-	@SubscribeEvent
-	public static void registerItems(final RegistryEvent.Register<Item> event)
-	{
-		event.getRegistry().register(new Item(new Item.Properties().group(BoundaryItemGroup.instance)).setRegistryName("boundaryrod_item"));
-		event.getRegistry().register(new Item(new Item.Properties().group(BoundaryItemGroup.instance).food(new Food.Builder().hunger(6).saturation(1.2f).build())).setRegistryName("boundaryfood_item"));
-	}
+	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, TheBoundary.MOD_ID);
+	
+	public static final RegistryObject<Item> BOUNDARYROD_ITEM = ITEMS.register("boundaryrod_item", () -> new Item(new Item.Properties().group(BoundaryItemGroup.instance)));
+	public static final RegistryObject<Item> BOUNDARYFOOD_ITEM = ITEMS.register("boundaryfood_item", () -> new Item(new Item.Properties().group(BoundaryItemGroup.instance).food(new Food.Builder().hunger(6).saturation(1.2f).build())));
+	
 }
