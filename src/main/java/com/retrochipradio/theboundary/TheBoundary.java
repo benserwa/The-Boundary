@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import com.retrochipradio.theboundary.init.BlockInit;
 import com.retrochipradio.theboundary.init.ItemInit;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
@@ -18,6 +17,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -25,6 +25,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod("theboundary")
+@Mod.EventBusSubscriber(modid = TheBoundary.MOD_ID, bus = Bus.MOD)
 public class TheBoundary
 {
     public static final Logger LOGGER = LogManager.getLogger();
